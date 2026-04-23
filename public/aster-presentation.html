@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Aster — Redesign &amp; Marketing Site · Client Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --red-400: #FF6B6B;
+    --red-500: #EF4444;
+    --red-600: #DC2626;
+    --red-700: #B91C1C;
+    --ink-50:  #FAFAF9;
+    --ink-100: #F4F4F3;
+    --ink-200: #E4E4E2;
+    --ink-300: #C8C8C4;
+    --ink-400: #9A9A95;
+    --ink-500: #6E6E69;
+    --ink-600: #4A4A46;
+    --ink-700: #2E2E2B;
+    --ink-800: #1C1C1A;
+    --ink-850: #141412;
+    --ink-900: #0C0C0B;
+    --ink-950: #050504;
+    --live: #22C55E;
+  }
+  * { box-sizing: border-box; }
+  html { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; font-feature-settings: 'ss01' 1, 'cv11' 1; }
+  body {
+    margin: 0;
+    background: var(--ink-950);
+    color: var(--ink-100);
+    font-size: 16px;
+    line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+  a { color: var(--red-400); text-decoration: none; }
+
+  /* ============================================== COVER */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px 32px;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(239,68,68,0.22) 0%, transparent 55%),
+      linear-gradient(180deg, var(--ink-950), var(--ink-900));
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+    pointer-events: none;
+  }
+  .cover > * { position: relative; z-index: 1; }
+  .brand-row { display: flex; justify-content: space-between; align-items: center; }
+  .logo { display: inline-flex; align-items: center; gap: 12px; }
+  .logo svg { width: 36px; height: 36px; }
+  .logo span { font-weight: 600; letter-spacing: -0.01em; font-size: 20px; }
+  .logo small { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--ink-500); margin-left: 10px; }
+  .meta {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--ink-500);
+  }
+  .title-block { margin: 80px 0 64px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--ink-400);
+  }
+  .live-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--live);
+    position: relative; display: inline-block;
+    box-shadow: 0 0 0 0 rgba(34,197,94,0.5); animation: ping 2.4s ease-out infinite;
+  }
+  @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); } 100% { box-shadow: 0 0 0 14px rgba(34,197,94,0); } }
+  .cover h1 {
+    font-size: clamp(48px, 9vw, 112px);
+    line-height: 0.95; letter-spacing: -0.035em; font-weight: 600;
+    margin: 24px 0 0; color: var(--ink-50); text-wrap: balance;
+  }
+  .cover h1 em {
+    font-style: normal;
+    background: linear-gradient(135deg, var(--red-400) 0%, var(--red-500) 60%, var(--red-700) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .cover .lede {
+    max-width: 680px; margin-top: 24px;
+    font-size: 20px; color: var(--ink-300); line-height: 1.55;
+  }
+  .cover .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 36px;
+  }
+  .cover .grid > div .value {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 34px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink-50);
+  }
+  .cover .grid > div .label {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-500); margin-top: 4px;
+  }
+
+  /* ============================================== SECTIONS */
+  section.section {
+    padding: 120px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+  }
+  .chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px; border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.03);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-300);
+  }
+  .chip-brand { background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.3); color: var(--red-400); }
+
+  h2 {
+    font-size: clamp(32px, 5vw, 54px);
+    line-height: 1.05; letter-spacing: -0.03em; font-weight: 600;
+    margin: 24px 0 16px; color: var(--ink-50); text-wrap: balance;
+  }
+  h2 .muted { color: var(--ink-500); }
+  h3 {
+    font-size: 22px; font-weight: 600; letter-spacing: -0.01em;
+    color: var(--ink-50); margin: 0 0 8px;
+  }
+  h4 {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-400); margin: 0 0 12px; font-weight: 500;
+  }
+  p { color: var(--ink-300); max-width: 780px; margin: 0 0 16px; }
+  p.wide { max-width: 960px; }
+
+  .split {
+    display: grid; grid-template-columns: 320px 1fr; gap: 64px;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .split { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  .card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+    padding: 32px;
+  }
+
+  .shot {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+  }
+  .shot img {
+    width: 100%; height: auto; display: block;
+  }
+  .shot .caption {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 18px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    background: rgba(0,0,0,0.2);
+    font-size: 13px; color: var(--ink-300);
+  }
+  .shot .caption .tag {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-500);
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 40px;
+  }
+  .gallery.single { grid-template-columns: 1fr; }
+  .gallery.triple { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 900px) {
+    .gallery, .gallery.triple { grid-template-columns: 1fr; }
+  }
+  .gallery .phones {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  }
+
+  .feature-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+    overflow: hidden; margin-top: 40px;
+  }
+  .feature-grid > div {
+    background: var(--ink-950); padding: 28px;
+  }
+  @media (max-width: 900px) { .feature-grid { grid-template-columns: 1fr; } }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px; border-radius: 999px;
+    background: rgba(34,197,94,0.1);
+    border: 1px solid rgba(34,197,94,0.3);
+    color: var(--live);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em;
+  }
+  .pill.brand { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.3); color: var(--red-400); }
+
+  hr.hairline {
+    border: 0; height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
+    margin: 0;
+  }
+
+  /* ============================================== PHONE FRAME */
+  .phone-frame {
+    max-width: 340px;
+    margin: 0 auto;
+    padding: 14px 10px;
+    border-radius: 42px;
+    background: linear-gradient(180deg, #1C1C1A, #0C0C0B);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 24px 70px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+  .phone-frame .shot { border-radius: 30px; }
+  .phone-frame .shot .caption { display: none; }
+
+  /* ============================================== FOOTER */
+  footer {
+    padding: 64px 0 96px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    color: var(--ink-500);
+  }
+  footer .wrap {
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 24px;
+    flex-wrap: wrap;
+  }
+  footer small {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em;
+  }
+
+  /* ============================================== PRINT */
+  @media print {
+    body { background: white; color: #111; font-size: 11pt; }
+    .cover { background: white; color: #111; min-height: auto; padding: 36px 24px; }
+    .cover::after { display: none; }
+    .cover h1, h2, h3 { color: #111; }
+    .cover h1 em { color: var(--red-500); -webkit-text-fill-color: var(--red-500); }
+    section.section { padding: 40px 0; border-color: #e5e5e5; }
+    .card, .shot, .phone-frame, .feature-grid > div { background: #fafafa; border-color: #e5e5e5; }
+    .shot .caption { background: #f4f4f3; color: #444; border-color: #e5e5e5; }
+    p, h4, .meta, .eyebrow, footer { color: #555 !important; }
+    h2 .muted { color: #888 !important; }
+    footer { border-color: #e5e5e5; }
+    section, .cover { page-break-inside: avoid; }
+    .gallery { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =================================== COVER =================================== -->
+<header class="cover">
+  <div class="brand-row">
+    <div class="logo">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <circle cx="16" cy="16" r="14" stroke="#4A4A46" stroke-width="1" stroke-dasharray="2 3" />
+        <circle cx="16" cy="16" r="8" stroke="#9A9A95" stroke-width="1" />
+        <circle cx="16" cy="16" r="4.5" fill="#EF4444" />
+        <circle cx="26" cy="10" r="1.5" fill="#22C55E" />
+      </svg>
+      <span>Aster</span>
+      <small>Watch the Dot</small>
+    </div>
+    <div class="meta">Client review · April 2026</div>
+  </div>
+
+  <div class="title-block">
+    <div class="eyebrow"><span class="live-dot"></span> redesign + marketing site</div>
+    <h1>Watch<br/>the <em>dot.</em></h1>
+    <p class="lede">A new visual system for the Aster app, and a marketing site that tells the story of live GPS tracking for cycling events. Both ship production-ready, built autonomously from the existing codebase.</p>
+  </div>
+
+  <div class="grid">
+    <div><div class="value">2</div><div class="label">tracks delivered</div></div>
+    <div><div class="value">9</div><div class="label">marketing pages</div></div>
+    <div><div class="value">5</div><div class="label">app pages redesigned</div></div>
+    <div><div class="value">100%</div><div class="label">clean builds</div></div>
+  </div>
+</header>
+
+<!-- =================================== SUMMARY =================================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="chip">01 · Overview</div>
+      </div>
+      <div>
+        <h2>Two deliverables. <span class="muted">One cohesive identity.</span></h2>
+        <p class="wide">Aster's a live GPS tracking app for cycling events — the bit the sport calls "dot watching." The redesign elevates the app's visual language without touching business logic. The marketing site translates it into a public-facing story for organizers, athletes, and spectators.</p>
+
+        <div class="feature-grid" style="grid-template-columns: repeat(2,1fr);">
+          <div>
+            <h4>Marketing site</h4>
+            <h3>A new home at watchthedot.cc</h3>
+            <p>Nine static pages, sub-1-second loads, a hand-built animated "live dot" canvas in the hero. Built on Next.js + Tailwind. Ready to deploy to Vercel.</p>
+          </div>
+          <div>
+            <h4>App redesign</h4>
+            <h3>Editorial polish, zero functional risk</h3>
+            <p>Expanded design tokens, refreshed typography, new component primitives. The existing tracking, WebSocket, and API logic is fully intact.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================== MARKETING - HERO =================================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="chip chip-brand">02 · Marketing · Hero</div>
+      </div>
+      <div>
+        <h2>The hero <span class="muted">is the product.</span></h2>
+        <p class="wide">A live, animated course renders in a pure-canvas visualization — no Mapbox key required. Riders progress along a Catmull–Rom–smoothed gravel route. The leader pulses. Chips update in real-time. First impression, same experience the app delivers.</p>
+      </div>
+    </div>
+
+    <div class="gallery single">
+      <div class="shot">
+        <img src="screenshots/01a-home-hero-desktop.png" alt="Marketing homepage hero with live dot animation" />
+        <div class="caption"><span>watchthedot.cc &nbsp;·&nbsp; home hero</span><span class="tag">desktop · 1440×900</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================== MARKETING - FULL HOME =================================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="chip">03 · Marketing · Homepage</div>
+      </div>
+      <div>
+        <h2>Every section earns its place.</h2>
+        <p class="wide">Problem statement · feature grid · how-it-works · three audience panels · safety (with an SOS chat mock) · social proof · FAQ · big red CTA. The whole page is 110 KB of JavaScript, pre-rendered at build time.</p>
+      </div>
+    </div>
+
+    <div class="gallery single">
+      <div class="shot">
+        <img src="screenshots/01-home-desktop.png" alt="Full-length marketing homepage" />
+        <div class="caption"><span>home · full page</span><span class="tag">desktop · long scroll</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================== MARKETING - MOBILE =================================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="chip">04 · Marketing · Mobile</div>
+      </div>
+      <div>
+        <h2>Responsive by design.</h2>
+        <p class="wide">Every page reflows cleanly down to 375 px. The hero canvas stays legible, the marquee scrolls, the feature grid stacks. Everything tested on real device widths.</p>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <div>
+        <div class="phone-frame">
+          <div class="shot">
+            <img src="screenshots/07a-home-hero-mobile.png" alt="Mobile home hero viewport" />
+          </div>
+        </div>
+        <p style="text-align:center; margin-top:14px;"><span class="pill">mobile · 390 wide</span> &nbsp; hero above fold</p>
+      </div>
+      <div>
+        <div class="phone-frame">
+          <div class="shot">
+            <img src="screenshots/07-home-mobile.png" alt="Full scroll on mobile" />
+          </div>
+        </div>
+        <p style="text-align:center; margin-top:14px;"><span class="pill">mobile · full scroll</span> &nbsp; all sections stacked</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hairline" />
+
+<!-- =================================== MARKETING - ORGANIZERS =================================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="chip chip-brand">05 · /organizers</div>
+      </div>
+      <div>
+        <h2>Run a race <span class="muted">you can see.</span></h2>
+        <p class="wide">A deep-dive built for race directors. Product deck covering course intelligence, the SOS inbox, cutoff automation, participant management, broadcast-ready leaderboards, and post-event reporting. Closes with a race-day playbook by timestamp.</p>
+      </div>
+    </div>
+
+    <div class="gallery single">
+      <div class="shot">
+        <img src="screenshots/02-organizers-desktop.png" alt="/organizers landing page" />
+        <div class="caption"><span>/organizers</span><span class="tag">desktop</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================== MARKETING - ATHLETES =================================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="chip chip-brand">06 · /athletes</div>
+      </div>
+      <div>
+        <h2>Ride. <span class="muted">Don't manage a livestream.</span></h2>
+        <p class="wide">Feature grid for riders, followed by a mocked-up tracking phone showing the in-ride screen — pulsing status ring, one-tap I'm OK / Pause / SOS. Ends on the same CTA block.</p>
+      </div>
+    </div>
+
+    <div class="gallery single">
+      <div class="shot">
+        <img src="screenshots/03-athletes-desktop.png" alt="/athletes landing page" />
+        <div class="caption"><span>/athletes</span><span class="tag">desktop</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================== MARKETING - SPECTATORS =================================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="chip chip-brand">07 · /spectators</div>
+      </div>
+      <div>
+        <h2>Follow the <span class="muted">story. Not the thumbnail.</span></h2>
+        <p class="wide">Fan-facing landing with a fully styled leaderboard mock — bibs, teams, splits, gaps, pace trends with up/down arrows. Demonstrates the real live leaderboard UI in a static context.</p>
+      </div>
+    </div>
+
+    <div class="gallery single">
+      <div class="shot">
+        <img src="screenshots/04-spectators-desktop.png" alt="/spectators landing page" />
+        <div class="caption"><span>/spectators</span><span class="tag">desktop</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================== MARKETING - PRICING =================================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="chip chip-brand">08 · /pricing</div>
+      </div>
+      <div>
+        <h2>Priced <span class="muted">like it's 2026. Not 2014.</span></h2>
+        <p class="wide">Three tiers: Rider (free forever), Event ($99/event), Series (custom). Followed by a full feature matrix split into Core tracking, Event management, Audience, and Platform. Reuses the homepage FAQ.</p>
+      </div>
+    </div>
+
+    <div class="gallery single">
+      <div class="shot">
+        <img src="screenshots/05-pricing-desktop.png" alt="/pricing landing page with comparison table" />
+        <div class="caption"><span>/pricing</span><span class="tag">desktop</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================== MARKETING - DOWNLOAD =================================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="chip chip-brand">09 · /download</div>
+      </div>
+      <div>
+        <h2>Put a dot <span class="muted">on the map.</span></h2>
+        <p class="wide">Install pathway for iOS, Android, and web. QR code block for easy scan-to-install. The web card is highlighted — Aster is a PWA first.</p>
+      </div>
+    </div>
+
+    <div class="gallery single">
+      <div class="shot">
+        <img src="screenshots/06-download-desktop.png" alt="/download landing page" />
+        <div class="caption"><span>/download</span><span class="tag">desktop</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hairline" />
+
+<!-- =================================== APP REDESIGN INTRO =================================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="chip">10 · App redesign</div>
+      </div>
+      <div>
+        <h2>Editorial polish. <span class="muted">Functional untouched.</span></h2>
+        <p class="wide">A refreshed design system cascades through every page of the existing React app — new warm-neutral <code style="color:var(--red-400);font-family:'JetBrains Mono',monospace">ink.*</code> scale, live/warn/sos/info signal colors, mono data fields, richer motion, dark-mode-ready CSS variables. Five flagship pages get deeper visual rewrites. All existing business logic — tracking, WebSocket, API, auth — stays intact.</p>
+
+        <div class="feature-grid">
+          <div>
+            <h4>Home</h4>
+            <p>New gradient header, live-event chip, animated tab underline, editorial event cards with live rail indicator.</p>
+          </div>
+          <div>
+            <h4>Login</h4>
+            <p>Radial brand backdrop, staggered reveals, mono-caps field labels, SOS-colored error state.</p>
+          </div>
+          <div>
+            <h4>Layout</h4>
+            <p>Frosted-glass bottom nav, elevated Track FAB with brand glow, active-route dot indicator.</p>
+          </div>
+          <div>
+            <h4>Event page</h4>
+            <p>Header chips, display-weight title, mono distance/gain/laps pills, sticky glass tabs with sliding underline.</p>
+          </div>
+          <div>
+            <h4>Track</h4>
+            <p>Dual pulse-ring status indicator, refreshed stat cards with live/warn side rails and mono-caps labels.</p>
+          </div>
+          <div>
+            <h4>Tokens &amp; CSS</h4>
+            <p>Expanded Tailwind config, CSS variables, new component primitives, animation keyframes, utility classes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================== APP - SCREENS =================================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="chip">11 · App screens</div>
+      </div>
+      <div>
+        <h2>Captured on real mock data.</h2>
+        <p class="wide">The frontend running against the in-memory mock backend, signed in as a test rider. The Home, Event, and Leaderboard screens show the live demo event data.</p>
+      </div>
+    </div>
+
+    <div class="gallery triple">
+      <div>
+        <div class="phone-frame">
+          <div class="shot"><img src="screenshots/app-01-login.png" alt="Redesigned login" /></div>
+        </div>
+        <p style="text-align:center; margin-top:14px;"><span class="pill brand">login</span> &nbsp; signed-out state</p>
+      </div>
+      <div>
+        <div class="phone-frame">
+          <div class="shot"><img src="screenshots/app-02-home.png" alt="Redesigned home" /></div>
+        </div>
+        <p style="text-align:center; margin-top:14px;"><span class="pill brand">home · discover</span> &nbsp; live + upcoming + archive</p>
+      </div>
+      <div>
+        <div class="phone-frame">
+          <div class="shot"><img src="screenshots/app-04-event.png" alt="Redesigned event page" /></div>
+        </div>
+        <p style="text-align:center; margin-top:14px;"><span class="pill brand">event page</span> &nbsp; about + route stats</p>
+      </div>
+    </div>
+
+    <div class="gallery" style="margin-top:48px;">
+      <div>
+        <div class="phone-frame">
+          <div class="shot"><img src="screenshots/app-05-leaderboard.png" alt="Leaderboard / Riders tab" /></div>
+        </div>
+        <p style="text-align:center; margin-top:14px;"><span class="pill brand">event · riders</span> &nbsp; live leaderboard with category rails</p>
+      </div>
+      <div>
+        <div class="phone-frame">
+          <div class="shot"><img src="screenshots/app-03-track.png" alt="Track page" /></div>
+        </div>
+        <p style="text-align:center; margin-top:14px;"><span class="pill brand">track</span> &nbsp; app-only tracking gate</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================== BRAND SYSTEM =================================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="chip">12 · Brand system</div>
+      </div>
+      <div>
+        <h2>Warm red. <span class="muted">Ink neutrals. Signal accents.</span></h2>
+        <p class="wide">The palette — codified once in Tailwind config and CSS variables, used consistently across both surfaces.</p>
+
+        <div class="feature-grid" style="grid-template-columns: repeat(4, 1fr); margin-top: 32px;">
+          <div style="background: var(--red-500); color: white;">
+            <h4 style="color:rgba(255,255,255,0.7)">primary</h4>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:20px; font-weight:600;">#EF4444</div>
+            <p style="color:rgba(255,255,255,0.7)">actions · live · SOS</p>
+          </div>
+          <div style="background: var(--live); color: var(--ink-950);">
+            <h4 style="color:rgba(0,0,0,0.5)">live</h4>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:20px; font-weight:600;">#22C55E</div>
+            <p style="color:rgba(0,0,0,0.6)">tracking active · OK</p>
+          </div>
+          <div style="background: var(--ink-950); color: var(--ink-50); border: 1px solid rgba(255,255,255,0.08);">
+            <h4>ink-950</h4>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:20px; font-weight:600;">#050504</div>
+            <p>canvas (dark)</p>
+          </div>
+          <div style="background: var(--ink-50); color: var(--ink-900);">
+            <h4 style="color:var(--ink-500)">ink-50</h4>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:20px; font-weight:600; color:var(--ink-900);">#FAFAF9</div>
+            <p style="color:var(--ink-500)">canvas (light)</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 40px;">
+          <h4>Type stack</h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+              <div style="font-size: 42px; font-weight: 600; letter-spacing: -0.03em; color: var(--ink-50);">Inter</div>
+              <p>UI copy, headings, body. Variable weight 400–700. Feature settings <code style="font-family:'JetBrains Mono',monospace;color:var(--red-400);">ss01</code>, <code style="font-family:'JetBrains Mono',monospace;color:var(--red-400);">cv11</code>.</p>
+            </div>
+            <div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 34px; font-weight: 500; color: var(--ink-50);">JetBrains Mono</div>
+              <p>Stats, data, eyebrow labels, timestamps. Tabular-nums globally.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================== NEXT STEPS =================================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="chip">13 · What's next</div>
+      </div>
+      <div>
+        <h2>Ready when you are.</h2>
+        <p class="wide">Both projects compile from a cold build. Suggested next moves, ordered by value over cost:</p>
+
+        <ol style="color: var(--ink-200); padding-left: 20px; line-height: 2;">
+          <li><strong style="color:var(--ink-50);">Deploy marketing to watchthedot.cc</strong> — Vercel will pick up the Next.js 15 project as-is. Point DNS, ship.</li>
+          <li><strong style="color:var(--ink-50);">Wire the dark-mode toggle</strong> — the CSS variables are in place. A single <code style="font-family:'JetBrains Mono',monospace;color:var(--red-400);">classList.toggle('dark')</code> flips the entire app.</li>
+          <li><strong style="color:var(--ink-50);">Connect CTAs to the real app</strong> — the "Get the app" and "Host an event" buttons point at placeholders; swap in your live URLs.</li>
+          <li><strong style="color:var(--ink-50);">Reduced-motion support</strong> — pause the hero canvas under <code style="font-family:'JetBrains Mono',monospace;color:var(--red-400);">prefers-reduced-motion</code>.</li>
+          <li><strong style="color:var(--ink-50);">Replace the QR placeholder</strong> with a dynamic code that deep-links by user-agent.</li>
+          <li><strong style="color:var(--ink-50);">Surgical follow-ups</strong> on EventPage &amp; Track — the bigger pages have 1,200+ lines of business logic; migrate remaining legacy styles to the new token scale incrementally, without risk to tracking behavior.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================== STACK =================================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="chip">14 · Stack &amp; build</div>
+      </div>
+      <div>
+        <h2>Production-ready. <span class="muted">Zero duct tape.</span></h2>
+
+        <div class="feature-grid" style="grid-template-columns: repeat(2,1fr);">
+          <div>
+            <h4>Marketing</h4>
+            <p style="margin-bottom:8px"><strong style="color:var(--ink-50)">Next.js 15 App Router</strong> · React 19 · Tailwind 3.4 · lucide-react · Inter + JetBrains Mono via <code style="font-family:'JetBrains Mono',monospace;color:var(--red-400);">next/font</code></p>
+            <p>✓ 9 static pages · ✓ 110 KB first-load JS · ✓ Fully static prerendered · ✓ Forward-compatible with Next 16</p>
+          </div>
+          <div>
+            <h4>App redesign</h4>
+            <p style="margin-bottom:8px"><strong style="color:var(--ink-50)">Existing Vite + React 19 + TypeScript</strong> · Tailwind token refresh · new CSS variables · shared component primitives</p>
+            <p>✓ TypeScript clean · ✓ Vite build 5.7 s · ✓ Home 12 kB · Event 55 kB · Track 28 kB</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <circle cx="16" cy="16" r="14" stroke="#4A4A46" stroke-width="1" stroke-dasharray="2 3" />
+        <circle cx="16" cy="16" r="8" stroke="#9A9A95" stroke-width="1" />
+        <circle cx="16" cy="16" r="4.5" fill="#EF4444" />
+        <circle cx="26" cy="10" r="1.5" fill="#22C55E" />
+      </svg>
+      <span style="color:var(--ink-200)">Aster</span>
+      <small>Watch the Dot</small>
+    </div>
+    <small>Client review document · Redesign &amp; marketing site · Built in a shed, tested on gravel.</small>
+  </div>
+</footer>
+
+</body>
+</html>

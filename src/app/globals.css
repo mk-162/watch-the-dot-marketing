@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-display: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    font-feature-settings: 'ss01' 1, 'cv11' 1;
+  }
+
+  body {
+    background-color: #050504;
+    color: #F4F4F3;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection {
+    background: #EF4444;
+    color: #FAFAF9;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply max-w-[1320px] mx-auto px-6 md:px-10;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-micro uppercase tracking-[0.18em] text-ink-400;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-medium transition-all select-none whitespace-nowrap;
+    @apply disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-500 text-white h-12 px-6 rounded-full text-sm;
+    @apply hover:bg-brand-400 hover:shadow-glow-brand active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply btn text-ink-100 h-12 px-6 rounded-full text-sm border border-ink-700;
+    @apply hover:bg-ink-800 hover:border-ink-600 active:scale-[0.98];
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-ink-700 bg-ink-900/60 backdrop-blur text-xs font-medium text-ink-200;
+  }
+
+  .live-dot {
+    @apply relative inline-block w-2 h-2 rounded-full bg-signal-live;
+  }
+
+  .live-dot::after {
+    content: '';
+    @apply absolute inset-0 rounded-full bg-signal-live animate-pulse-ring;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-radial-spot {
+    background: radial-gradient(circle at 50% 0%, rgba(239,68,68,0.18) 0%, transparent 55%);
+  }
+
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  .gradient-text {
+    background: linear-gradient(180deg, #F4F4F3 0%, #9A9A95 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gradient-brand {
+    background: linear-gradient(135deg, #FF6B6B 0%, #EF4444 50%, #B91C1C 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .mask-fade-y {
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  }
+
+  .divider-hairline {
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
+  }
+}
