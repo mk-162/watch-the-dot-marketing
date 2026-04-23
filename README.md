@@ -46,6 +46,17 @@ Global CSS utilities in `src/app/globals.css`:
 - `.bg-grid`, `.bg-radial-spot`, `.bg-noise`
 - `.gradient-text`, `.gradient-brand`, `.mask-fade-y`
 
+## Deploy on GitHub Pages
+
+This repo includes a GitHub Actions workflow that builds the static export and publishes the `out/` directory to Pages.
+
+After pushing to GitHub:
+
+1. Open the repository settings.
+2. Go to `Pages`.
+3. Set `Source` to `GitHub Actions`.
+4. Push to `main` again if GitHub does not start the workflow automatically.
+
 ## Deploy on Vercel
 
 No config needed beyond what's in `next.config.mjs`. The build is fully static — every page prerenders. Point a domain (e.g. `watchthedot.cc`) at the Vercel project and ship.
