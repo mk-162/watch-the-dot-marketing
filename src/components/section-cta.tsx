@@ -23,8 +23,7 @@ export function SectionCTA() {
               </h2>
 
               <p className="mt-6 text-lg text-white/85 max-w-lg leading-relaxed">
-                Free for athletes. Free for riders up to 25. Paid plans start where most trackers
-                give up. Thirty-day money-back, no call required.
+                Free for athletes. Free for 25 riders. Paid plans start where other trackers quit. Thirty-day guarantee, no calls.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-3">
@@ -46,9 +45,9 @@ export function SectionCTA() {
 
             <div className="hidden md:grid grid-cols-2 gap-4">
               {[
-                { v: 'iOS · Android', l: 'PWA + native' },
+                { v: 'iOS and Android', l: 'PWA and native' },
                 { v: 'Offline', l: 'queued pings' },
-                { v: 'GDPR', l: 'ready' },
+                { v: 'GDPR', l: 'compliant' },
                 { v: 'API', l: 'for integrators' },
               ].map((s) => (
                 <div

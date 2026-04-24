@@ -18,13 +18,12 @@ export function SectionHero() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-ink-50 leading-[0.95]">
-              <span className="block">Watch</span>
-              <span className="block">the <span className="gradient-brand">dot</span>.</span>
+              <span className="block">Live tracking</span>
+              <span className="block">for <span className="gradient-brand">remote</span> events.</span>
             </h1>
 
             <p className="mt-7 text-lg text-ink-300 max-w-xl leading-relaxed text-pretty">
-              Aster turns every race, group ride, and grand départ into a live, watchable event.
-              Real-time GPS, route-snapped leaderboards, and SOS — built for the sport, not shoehorned into it.
+              Aster makes every race, group ride, and time trial a live event you can actually watch. Real-time GPS, route-snapping, leaderboards, offline start and finish, and SOS built for this kind of event, not bolted on.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -37,16 +36,6 @@ export function SectionHero() {
               </Link>
             </div>
 
-            <div className="mt-14 grid grid-cols-3 gap-6 max-w-lg">
-              <Metric value="127" label="riders live" />
-              <Metric value="1.4M" label="miles tracked" />
-              <Metric value="0.4s" label="update latency" />
-            </div>
-
-            <div className="mt-10 flex items-center gap-2 text-xs font-mono text-ink-500">
-              <ShieldCheck size={14} className="text-signal-live" />
-              Emergency SOS responded to in under 90 seconds, on average.
-            </div>
           </div>
 
           <div className="relative h-[460px] md:h-[560px]">

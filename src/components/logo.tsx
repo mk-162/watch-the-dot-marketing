@@ -20,9 +20,6 @@ export function Logo({ className }: { className?: string }) {
       </div>
       <div className="flex items-baseline gap-2">
         <span className="text-lg font-semibold tracking-tight text-ink-50">Aster</span>
-        <span className="hidden sm:inline text-micro font-mono text-ink-500 uppercase tracking-[0.18em]">
-          Watch the Dot
-        </span>
       </div>
     </div>
   );

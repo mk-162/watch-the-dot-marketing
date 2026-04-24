@@ -5,10 +5,9 @@ export function SectionProblem() {
         <div className="max-w-4xl">
           <div className="eyebrow mb-6">the problem</div>
           <p className="text-3xl md:text-5xl font-semibold text-ink-50 tracking-tight leading-[1.1] text-balance">
-            A 10-hour gravel race shouldn't end at the finish line.{' '}
+            It is almost impossible to track riders in remote locations.{' '}
             <span className="text-ink-500">
-              But most tracking tools were built for marathons, live TV, or neither. Spectators guess.
-              Organizers stress. Partners go dark for hours at a time.
+              Event managers, team managers and spectators miss the action and cannot play back how the event unfolded.
             </span>
           </p>
         </div>
@@ -17,18 +16,18 @@ export function SectionProblem() {
           {[
             {
               k: 'For organizers',
-              h: 'Safety is someone else\'s SaaS.',
-              p: 'Radios, spreadsheets, and a WhatsApp group with 200 people. Nobody knows who is where until somebody crashes.',
+              h: 'Safety is someone else\'s problem.',
+              p: 'Radio, spreadsheet, WhatsApp group with 200 people. Nobody knows where anyone is until someone crashes.',
             },
             {
               k: 'For athletes',
               h: '"Send me your Garmin link."',
-              p: 'Tracking apps drain batteries, dump you off-grid, and don\'t even know where the course goes.',
+              p: 'Tracking apps kill your battery, drop you off-grid, and don\'t know which way the course goes.',
             },
             {
               k: 'For fans',
               h: 'Refresh. Refresh. Refresh.',
-              p: 'A single grainy live stream at the finish line while your rider is 137 km out, fighting a headwind you can\'t see.',
+              p: 'One pixelated stream at the finish while your rider fights a headwind 137 km out that you can\'t see.',
             },
           ].map((item) => (
             <div key={item.k} className="bg-ink-950 p-8 md:p-10 space-y-4">

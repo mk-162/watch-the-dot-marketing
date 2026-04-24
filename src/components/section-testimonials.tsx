@@ -1,27 +1,23 @@
 const quotes = [
   {
-    body:
-      '"We used to chase riders around a 140-mile course with a radio and a spreadsheet. Now we watch the board and intervene on exceptions. Night-and-day different."',
-    name: 'Marla Ibanez',
-    role: 'Race director, Flint Hills 200',
+    body: "We chased riders around a 140-mile course with a radio and spreadsheet. Now we watch the board and jump in on problems. Completely different.",
+    name: "Marla Ibanez",
+    role: "Race director, Flint Hills 200",
   },
   {
-    body:
-      '"My wife watched me bonk in real-time from 2,100 miles away. I got a ‘you good?\' text at mile 96. I was not good. I was very not good."',
-    name: 'Cam Whitfield',
-    role: 'Elite gravel racer',
+    body: "My wife watched me bonk in real-time from 2,100 miles away. At mile 96 she texted asking if I was okay. I was not.",
+    name: "Cam Whitfield",
+    role: "Elite gravel racer",
   },
   {
-    body:
-      '"The SOS chat is the feature I don\'t tell sponsors about, because nobody wants to sell safety. But it\'s the feature that keeps me from losing sleep."',
-    name: 'Dr. Priya Raman',
-    role: 'Event medical director',
+    body: "SOS is the feature I don't talk to sponsors about because nobody wants to sell safety. But it's the one that lets me sleep.",
+    name: "Dr. Priya Raman",
+    role: "Event medical director",
   },
   {
-    body:
-      '"Our club now runs a weekly group ride with embedded tracking on the website. Attendance doubled. Nobody rode off the front and disappeared."',
-    name: 'JB Rocourt',
-    role: 'Ardennes Cycling Club',
+    body: "Our club started a weekly group ride with embedded tracking on the site. Attendance doubled. Nobody disappears off the front anymore.",
+    name: "JB Rocourt",
+    role: "Ardennes Cycling Club",
   },
 ];
 
@@ -32,8 +28,7 @@ export function SectionTestimonials() {
         <div className="max-w-2xl mb-14">
           <div className="eyebrow mb-4">What organizers and riders say</div>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-ink-50 text-balance">
-            Used on five continents,{' '}
-            <span className="text-ink-500">by people who don't get paid to tweet about software.</span>
+            Used on five continents by people who don't get paid to tweet about tools.
           </h2>
         </div>
 

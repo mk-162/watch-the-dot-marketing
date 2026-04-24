@@ -6,31 +6,31 @@ import { Plus, Minus } from 'lucide-react';
 const faqs = [
   {
     q: 'Do spectators need to download anything?',
-    a: 'No. Any share link works in a browser — including the oldest phone your parents still use. Installing the PWA gets you push notifications and faster load, but it\'s optional.',
+    a: 'No. Any share link works in a browser, even old phones. PWA install adds push and speed, but it\'s optional.',
   },
   {
-    q: 'What happens when a rider loses cell signal?',
-    a: 'The app keeps recording GPS locally and queues pings to IndexedDB. When signal returns, the queue flushes in a single batch and the map replays the missing segment — so leaderboards self-correct without duplicating distance.',
+    q: 'What happens when a rider loses signal?',
+    a: 'App keeps recording GPS locally, queues pings in IndexedDB. When signal returns, the queue flushes in one batch and the map replays the gap so leaderboards self-correct.',
   },
   {
-    q: 'How does the SOS flow actually work?',
-    a: 'The athlete taps SOS, types a 4-digit confirmation code, and the alert fires over both WebSocket and a push notification to every organizer in seconds. A two-way chat opens. Organizers acknowledge, respond, and can mark the SOS resolved with notes attached to the event report.',
+    q: 'How does SOS actually work?',
+    a: 'Athlete taps SOS, types 4-digit code, alert fires over WebSocket and push to every organizer in seconds. Two-way chat opens. Organizers acknowledge, respond, mark resolved with notes in the event report.',
   },
   {
-    q: 'Do I need Mapbox or can I bring my own tiles?',
-    a: 'We ship a Mapbox-powered default because it looks great and handles offline caching well. Pro plans let you plug in your own tile provider — OSM, Carto, whatever your legal team approves.',
+    q: 'Do I need Mapbox or can I use my tiles?',
+    a: 'We ship Mapbox because it looks great and caches well offline. Pro plans let you plug in your own tiles, OSM, Carto, whatever your legal team approves.',
   },
   {
-    q: 'Can I embed the leaderboard on my event site?',
-    a: 'Yes. Every public event gets an embeddable widget with a clean iframe or a rich Webflow/WordPress block. The live dot stays live even on pages you don\'t control.',
+    q: 'Can I embed the leaderboard?',
+    a: 'Yes. Every public event gets an embeddable widget, clean iframe or Webflow/WordPress block. The dot stays live on pages you don\'t control.',
   },
   {
-    q: 'Will the battery survive a 12-hour race?',
-    a: 'With Smart Battery Mode enabled: yes. Aster throttles GPS rate and ping batching to the rider\'s pace, signal quality, and remaining battery. Most modern phones report 8–15% battery per hour of continuous tracking, compared to 25–40% with Strava Live or Find My.',
+    q: 'Will battery make it through a long race?',
+    a: 'With Smart Battery Mode, Aster throttles GPS and batching to preserve power. The app adjusts to pace, signal, and remaining battery to extend your ride time.',
   },
   {
     q: 'Who owns my data?',
-    a: 'You do. Riders own their tracks. Organizers own the event. Aster is GDPR-ready, supports full data export, and deletes everything permanently on request — including position pings.',
+    a: 'You do. Riders own tracks. Organizers own events. GDPR-ready, full export support, permanent deletion on request including position pings.',
   },
 ];
 

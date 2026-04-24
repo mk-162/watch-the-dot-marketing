@@ -14,56 +14,80 @@ const features = [
   {
     icon: Radio,
     tag: 'Core',
-    title: 'Sub-second live tracking',
-    body: 'Positions stream every 400 ms via WebSockets with polling fallback. Route-snapped on a PostGIS backend — no wandering dots across the highway.',
+    title: 'Live tracking',
+    body: 'Real-time positions streamed to the map with route-snapping so your dot stays on course.',
   },
   {
     icon: Route,
     tag: 'Courses',
     title: 'GPX in, dots out',
-    body: 'Upload a GPX. We extract elevation, switchbacks, laps, and checkpoints automatically. The rest of the app lights up around it.',
+    body: 'Upload a GPX and Aster extracts elevation, switchbacks, laps, checkpoints. Everything else cascades from there.',
   },
   {
     icon: Trophy,
     tag: 'Leaderboards',
     title: 'Live splits and gaps',
-    body: 'Distance-along-route leaderboards with gap estimation, category filters, and head-to-head comparison for up to five riders.',
+    body: 'Distance-along-route leaderboards with gap estimates, filters by category, head-to-head for up to five riders.',
   },
   {
     icon: Siren,
     tag: 'Safety',
-    title: 'Two-tap SOS + crash detection',
-    body: 'A 4-digit confirmation. Real-time broadcast to organizers. A two-way chat the moment an athlete hits the button — before the radio call is even placed.',
+    title: 'Two-tap SOS',
+    body: '4-digit confirmation, instant broadcast to organizers, two-way chat for coordination.',
   },
   {
     icon: Users,
     tag: 'Social',
-    title: 'Follow the riders you care about',
-    body: 'Follow an athlete, a team, or an event. Get notified when they start, make a move, stop moving, or cross the line.',
+    title: 'Follow riders you care about',
+    body: 'Follow an athlete, team, or event and get notified when they start, move, stop, or finish.',
   },
   {
     icon: BatteryCharging,
     tag: 'Hardware-aware',
     title: 'Smart battery mode',
-    body: 'On phones and in the Capacitor app, Aster throttles GPS to battery level, cell signal, and pace — so 200-mile rides don\'t need 200 miles of battery.',
+    body: 'Aster throttles GPS to battery level, signal, and pace so 200-mile rides don\'t need 200 miles of battery.',
   },
   {
     icon: Share2,
     tag: 'Embeds',
-    title: 'Drop-in share links & widgets',
-    body: 'Every ride gets a share code. Every event gets an embeddable leaderboard. Every athlete has a profile you can point a sponsor at.',
+    title: 'Share codes and widgets',
+    body: 'Every ride gets a share code. Every event gets an embeddable leaderboard. Every athlete has a profile for sponsors.',
   },
   {
     icon: Bell,
     tag: 'Notifications',
-    title: 'Push built for endurance events',
-    body: 'iOS / Android / Web push with quiet hours, stoppage thresholds, and per-rider controls. No spam, no "Someone liked your post."',
+    title: 'Push for endurance events',
+    body: 'iOS, Android, web push with quiet hours, stoppage thresholds, per-rider control. No "someone liked your post" spam.',
   },
   {
     icon: MapPin,
     tag: 'Free Ride',
-    title: 'Not racing? Share the ride.',
-    body: 'One-tap share link for any ride. Your spouse can watch your gravel suffer-fest from the couch, and SOS works whether or not there\'s a race around you.',
+    title: 'Ride without a race',
+    body: 'One-tap share link for any ride. Your spouse watches from the couch while you suffer. SOS works whether there\'s a race or not.',
+  },
+  {
+    icon: Radio,
+    tag: 'Organizers',
+    title: 'Organizer view',
+    body: 'Manage your event, message riders, see live timing. Map all your riders and manage SOS calls from one place.',
+  },
+  {
+    icon: Users,
+    tag: 'Teams',
+    title: 'Team manager view',
+    body: 'See all team members on the course in one view. Compare time gaps, distances to feed zones and the finish, gaps between riders.',
+  },
+  {
+    icon: Radio,
+    tag: 'Connectivity',
+    title: 'Offline tracking',
+    body: 'App records location without connection. When signal returns, all stored data syncs to servers and processes for spectators.',
+  },
+  {
+    icon: MapPin,
+    tag: 'Connectivity',
+    title: 'Offline start and stop',
+    body: 'Start and end any ride type, races included, with zero internet. Everything syncs when you register and get connection at the end.',
   },
 ];
 
@@ -75,11 +99,11 @@ export function SectionFeatures() {
           <div className="max-w-xl">
             <div className="eyebrow mb-4">The platform</div>
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-ink-50 text-balance">
-              One platform. <span className="text-ink-500">Three audiences. Zero duct tape.</span>
+              One platform. <span className="text-ink-500">Three audiences. No duct tape.</span>
             </h2>
           </div>
           <p className="text-ink-400 max-w-sm text-pretty">
-            Every feature in Aster exists because an organizer, athlete, or fan asked for it at mile 97.
+            Every feature here came from someone at mile 97 asking for it.
           </p>
         </div>
 

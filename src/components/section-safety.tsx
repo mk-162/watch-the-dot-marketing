@@ -16,19 +16,15 @@ export function SectionSafety() {
             </div>
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-ink-50 text-balance leading-[1.05]">
               Safety isn't a feature.{' '}
-              <span className="text-ink-500">It's the whole reason.</span>
+              <span className="text-ink-500">It's why we exist.</span>
             </h2>
             <p className="mt-6 text-lg text-ink-300 leading-relaxed max-w-lg">
-              Most events hire a medical team and pray the cell coverage holds. Aster assumes the
-              coverage won't. We queue pings offline, detect crashes automatically, and ladder the
-              response from "are you okay?" to "we're rolling" in a single thread.
+              Most events hire a medical team and hope the cell coverage holds. Aster assumes it won't. We queue pings offline and go from "are you okay?" to "we're rolling" in a single chat thread.
             </p>
 
             <div className="mt-10 grid grid-cols-2 gap-6">
               <Stat icon={ShieldCheck} value="2-tap" label="SOS confirmation" />
-              <Stat icon={Radio} value="87s" label="avg acknowledgement" />
-              <Stat icon={HeartPulse} value="auto" label="crash detection" />
-              <Stat icon={Phone} value="24/7" label="organizer reachable" />
+              <Stat icon={Radio} value="Live" label="alert broadcast" />
             </div>
           </div>
 

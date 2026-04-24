@@ -2,30 +2,30 @@ const steps = [
   {
     n: '01',
     title: 'Spin up the event',
-    body: 'Create an event, upload a GPX, configure categories and a cutoff. Aster builds the route, elevation, laps, and checkpoints.',
-    stat: '3 min',
-    statLabel: 'from GPX to live leaderboard',
+    body: 'Create event, upload GPX, set categories and a cutoff. Aster builds the route, elevation, laps, and checkpoints.',
+    stat: 'Fast',
+    statLabel: 'setup',
   },
   {
     n: '02',
     title: 'Riders tap start',
-    body: 'Athletes open the app, tap Start. Battery mode kicks in. Organizers see every active dot.',
-    stat: '< 1%',
-    statLabel: 'battery per hour in low-power mode',
+    body: 'Athletes open app, tap Start, battery mode kicks in, organizers see every dot in real-time.',
+    stat: 'Efficient',
+    statLabel: 'battery use',
   },
   {
     n: '03',
-    title: 'Fans watch the dot',
-    body: 'Spectators share a link, follow a rider, and see the same map the organizer sees — without the SOS panel.',
-    stat: '0.4 s',
-    statLabel: 'typical position refresh',
+    title: 'Fans watch',
+    body: 'Spectators share a link, follow a rider, see the live map without the SOS panel.',
+    stat: 'Live',
+    statLabel: 'updates',
   },
   {
     n: '04',
-    title: 'Safety, built-in',
-    body: 'Two-tap SOS from the athlete. Instant broadcast to organizers. Two-way chat until help arrives.',
-    stat: '87 s',
-    statLabel: 'average SOS acknowledgement',
+    title: 'Safety built in',
+    body: 'Athlete taps SOS, gets instant broadcast to organizers, two-way chat for coordination.',
+    stat: 'Real-time',
+    statLabel: 'communication',
   },
 ];
 
@@ -36,7 +36,7 @@ export function SectionHowItWorks() {
         <div className="max-w-2xl mb-16">
           <div className="eyebrow mb-4">How it works</div>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-ink-50 text-balance">
-            From GPX upload to live broadcast{' '}
+            From GPX to live broadcast{' '}
             <span className="text-ink-500">in the time it takes to make coffee.</span>
           </h2>
         </div>
